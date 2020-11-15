@@ -106,7 +106,7 @@ void selecao_com_substituicao(char *nome_arquivo_entrada, Nomes *nome_arquivos_s
         }
 
             printf("\n== P>%s==\n", nome_particao);
-        while(fullXFrozenArray(frozen,M) != 1 || !feof(arq)){ //  enquanto não tiver todoo o array congelado ou for o fim do arquivo
+        while((fullXFrozenArray(frozen,M) != 1) && !feof(arq)){ //  enquanto não tiver todoo o array congelado ou for o fim do arquivo
             // pega o index do menor codigo dentro da memory
             int minIndex = getMinIndex(M, memory,frozen);
 
