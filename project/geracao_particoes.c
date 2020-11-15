@@ -106,7 +106,7 @@ void selecao_com_substituicao(char *nome_arquivo_entrada, Nomes *nome_arquivos_s
         }
 
             printf("\n== P>%s==\n", nome_particao);
-        while((fullXFrozenArray(frozen,M) != 1) && !feof(arq)){ //  enquanto não tiver todoo o array congelado ou for o fim do arquivo
+        while(fullXFrozenArray(frozen,M) != 1 ){ //  enquanto não tiver todoo o array congelado ou for o fim do arquivo
             // pega o index do menor codigo dentro da memory
             int minIndex = getMinIndex(M, memory,frozen);
 
@@ -116,11 +116,17 @@ void selecao_com_substituicao(char *nome_arquivo_entrada, Nomes *nome_arquivos_s
             salva_cliente(minCliente, p);
 
             // pega o proximo R
-            memory[minIndex] = le_cliente(arq);
-
-            if(memory[minIndex]->cod_cliente < minCliente->cod_cliente){
-                frozen[minIndex] = 'X';
+            if((memory[minIndex] = le_cliente(arq)) == NULL){
+                    frozen[minIndex] = 'X';
+                    printf("FEOF>%i\n",feof(arq));
             }
+
+            if(memory[minIndex] != NULL){
+                if(memory[minIndex]->cod_cliente < minCliente->cod_cliente ){
+                    frozen[minIndex] = 'X';
+                }
+            }
+
         }
 
         fclose(p); // fecha partição
@@ -128,10 +134,10 @@ void selecao_com_substituicao(char *nome_arquivo_entrada, Nomes *nome_arquivos_s
 
         if (feof(arq)) {
             fim = 1;
-            break;
+        }else{
+            nome_arquivos_saida = nome_arquivos_saida->prox; // pega o proximo nome de partição e coloca como atual
         }
 
-        nome_arquivos_saida = nome_arquivos_saida->prox; // pega o proximo nome de partição e coloca como atual
     }
 
 }
@@ -150,7 +156,7 @@ int fullXFrozenArray(char *array, int m){
     return countX == m ? 1:0;
 }
 
-int getMinIndex(int M, TCliente* *memory, char *frozen) {
+int getMinIndex(int M, TCliente* *memory, char *frozen){
     int minValue, minIndex , first=0;
 
     for(int k=0; k < M-1;){
