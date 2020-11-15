@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project
+# Install script for directory: C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

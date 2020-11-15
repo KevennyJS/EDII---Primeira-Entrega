@@ -8,102 +8,102 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="project">
-				<Option output="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/project.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug"/>
+				<Option output="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/project.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/DEV/mingw/include"/>
-					<Add directory="c:\dev\mingw\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/include"/>
-					<Add directory="c:\dev\mingw\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/include-fixed"/>
-					<Add directory="c:\dev\mingw\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="C:/WinDevKit/include"/>
+					<Add directory="c:\windevkit\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/include"/>
+					<Add directory="c:\windevkit\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="c:\windevkit\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 project"/>
-					<CompileFile command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 project"/>
+					<CompileFile command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="project/fast">
-				<Option output="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/project.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug"/>
+				<Option output="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/project.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/DEV/mingw/include"/>
-					<Add directory="c:\dev\mingw\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/include"/>
-					<Add directory="c:\dev\mingw\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/include-fixed"/>
-					<Add directory="c:\dev\mingw\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="C:/WinDevKit/include"/>
+					<Add directory="c:\windevkit\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/include"/>
+					<Add directory="c:\windevkit\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="c:\windevkit\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 project/fast"/>
-					<CompileFile command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 project/fast"/>
+					<CompileFile command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/DEV/mingw/bin/mingw32-make.exe -f &quot;C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/WinDevKit/bin/mingw32-make.exe -f &quot;C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cliente.c">
+		<Unit filename="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cliente.c">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cliente.h">
+		<Unit filename="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cliente.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/geracao_particoes.c">
+		<Unit filename="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/geracao_particoes.c">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/geracao_particoes.h">
+		<Unit filename="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/geracao_particoes.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/lista_clientes.c">
+		<Unit filename="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/lista_clientes.c">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/lista_clientes.h">
+		<Unit filename="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/lista_clientes.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/main.c">
+		<Unit filename="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/main.c">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/nomes.c">
+		<Unit filename="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/nomes.c">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/nomes.h">
+		<Unit filename="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/nomes.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/CMakeLists.txt">
+		<Unit filename="C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

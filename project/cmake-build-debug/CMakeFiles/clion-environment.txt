@@ -1,4 +1,4 @@
-ToolSet: w64 3.3 (local)@C:\DEV\mingw
+ToolSet: w64 3.3 (local)@C:\WinDevKit
 Options: 
 
 Options:

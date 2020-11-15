@@ -1,4 +1,11 @@
-C:\Users\AllucardHome\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project
+C:\Users\Idylicaro\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project
+-- The C compiler identification is GNU 4.8.3
+-- Check for working C compiler: C:/WinDevKit/bin/gcc.exe
+-- Check for working C compiler: C:/WinDevKit/bin/gcc.exe - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/AllucardHome/Documents/GitHub/EDII---Primeira-Entrega/project/cmake-build-debug
+-- Build files have been written to: C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cmake-build-debug

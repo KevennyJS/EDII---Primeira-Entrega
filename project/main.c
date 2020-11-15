@@ -149,7 +149,7 @@ void teste05(){
                                   cria_nomes(cria_str("p3.dat"),
                                              cria_nomes(cria_str("p4.dat"), NULL))));
 
-    classificacao_interna(NOME_ARQUIVO_ENTRADA, nomes, 6);
+    selecao_com_substituicao(NOME_ARQUIVO_ENTRADA, nomes, 6);
 
     p = nomes;
     saida = le_clientes(p->nome);

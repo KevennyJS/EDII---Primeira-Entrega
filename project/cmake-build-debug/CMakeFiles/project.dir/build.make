@@ -53,19 +53,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\Users\AllucardHome\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = C:\Users\Idylicaro\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = C:\Users\AllucardHome\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E rm -f
+RM = C:\Users\Idylicaro\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project
+CMAKE_SOURCE_DIR = C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/project.dir/depend.make
@@ -78,68 +78,68 @@ include CMakeFiles/project.dir/flags.make
 
 CMakeFiles/project.dir/main.c.obj: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/project.dir/main.c.obj"
-	C:\DEV\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\project.dir\main.c.obj   -c C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/project.dir/main.c.obj"
+	C:\WinDevKit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\project.dir\main.c.obj   -c C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\main.c
 
 CMakeFiles/project.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/project.dir/main.c.i"
-	C:\DEV\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\main.c > CMakeFiles\project.dir\main.c.i
+	C:\WinDevKit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\main.c > CMakeFiles\project.dir\main.c.i
 
 CMakeFiles/project.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/project.dir/main.c.s"
-	C:\DEV\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\main.c -o CMakeFiles\project.dir\main.c.s
+	C:\WinDevKit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\main.c -o CMakeFiles\project.dir\main.c.s
 
 CMakeFiles/project.dir/cliente.c.obj: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/cliente.c.obj: ../cliente.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/project.dir/cliente.c.obj"
-	C:\DEV\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\project.dir\cliente.c.obj   -c C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\cliente.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/project.dir/cliente.c.obj"
+	C:\WinDevKit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\project.dir\cliente.c.obj   -c C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\cliente.c
 
 CMakeFiles/project.dir/cliente.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/project.dir/cliente.c.i"
-	C:\DEV\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\cliente.c > CMakeFiles\project.dir\cliente.c.i
+	C:\WinDevKit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\cliente.c > CMakeFiles\project.dir\cliente.c.i
 
 CMakeFiles/project.dir/cliente.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/project.dir/cliente.c.s"
-	C:\DEV\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\cliente.c -o CMakeFiles\project.dir\cliente.c.s
+	C:\WinDevKit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\cliente.c -o CMakeFiles\project.dir\cliente.c.s
 
 CMakeFiles/project.dir/geracao_particoes.c.obj: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/geracao_particoes.c.obj: ../geracao_particoes.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/project.dir/geracao_particoes.c.obj"
-	C:\DEV\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\project.dir\geracao_particoes.c.obj   -c C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\geracao_particoes.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/project.dir/geracao_particoes.c.obj"
+	C:\WinDevKit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\project.dir\geracao_particoes.c.obj   -c C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\geracao_particoes.c
 
 CMakeFiles/project.dir/geracao_particoes.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/project.dir/geracao_particoes.c.i"
-	C:\DEV\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\geracao_particoes.c > CMakeFiles\project.dir\geracao_particoes.c.i
+	C:\WinDevKit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\geracao_particoes.c > CMakeFiles\project.dir\geracao_particoes.c.i
 
 CMakeFiles/project.dir/geracao_particoes.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/project.dir/geracao_particoes.c.s"
-	C:\DEV\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\geracao_particoes.c -o CMakeFiles\project.dir\geracao_particoes.c.s
+	C:\WinDevKit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\geracao_particoes.c -o CMakeFiles\project.dir\geracao_particoes.c.s
 
 CMakeFiles/project.dir/lista_clientes.c.obj: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/lista_clientes.c.obj: ../lista_clientes.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/project.dir/lista_clientes.c.obj"
-	C:\DEV\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\project.dir\lista_clientes.c.obj   -c C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\lista_clientes.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/project.dir/lista_clientes.c.obj"
+	C:\WinDevKit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\project.dir\lista_clientes.c.obj   -c C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\lista_clientes.c
 
 CMakeFiles/project.dir/lista_clientes.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/project.dir/lista_clientes.c.i"
-	C:\DEV\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\lista_clientes.c > CMakeFiles\project.dir\lista_clientes.c.i
+	C:\WinDevKit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\lista_clientes.c > CMakeFiles\project.dir\lista_clientes.c.i
 
 CMakeFiles/project.dir/lista_clientes.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/project.dir/lista_clientes.c.s"
-	C:\DEV\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\lista_clientes.c -o CMakeFiles\project.dir\lista_clientes.c.s
+	C:\WinDevKit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\lista_clientes.c -o CMakeFiles\project.dir\lista_clientes.c.s
 
 CMakeFiles/project.dir/nomes.c.obj: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/nomes.c.obj: ../nomes.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/project.dir/nomes.c.obj"
-	C:\DEV\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\project.dir\nomes.c.obj   -c C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\nomes.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/project.dir/nomes.c.obj"
+	C:\WinDevKit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\project.dir\nomes.c.obj   -c C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\nomes.c
 
 CMakeFiles/project.dir/nomes.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/project.dir/nomes.c.i"
-	C:\DEV\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\nomes.c > CMakeFiles\project.dir\nomes.c.i
+	C:\WinDevKit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\nomes.c > CMakeFiles\project.dir\nomes.c.i
 
 CMakeFiles/project.dir/nomes.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/project.dir/nomes.c.s"
-	C:\DEV\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\nomes.c -o CMakeFiles\project.dir\nomes.c.s
+	C:\WinDevKit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\nomes.c -o CMakeFiles\project.dir\nomes.c.s
 
 # Object files for target project
 project_OBJECTS = \
@@ -161,7 +161,7 @@ project.exe: CMakeFiles/project.dir/build.make
 project.exe: CMakeFiles/project.dir/linklibs.rsp
 project.exe: CMakeFiles/project.dir/objects1.rsp
 project.exe: CMakeFiles/project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable project.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable project.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\project.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -174,6 +174,6 @@ CMakeFiles/project.dir/clean:
 .PHONY : CMakeFiles/project.dir/clean
 
 CMakeFiles/project.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\cmake-build-debug C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\cmake-build-debug C:\Users\AllucardHome\Documents\GitHub\EDII---Primeira-Entrega\project\cmake-build-debug\CMakeFiles\project.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\cmake-build-debug C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\cmake-build-debug C:\Users\Idylicaro\Documents\Github\EDII---Primeira-Entrega\project\cmake-build-debug\CMakeFiles\project.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/project.dir/depend
 

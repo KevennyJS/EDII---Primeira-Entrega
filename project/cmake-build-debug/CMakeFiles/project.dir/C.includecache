@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cliente.h
+stdio.h
+-
+
+C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/geracao_particoes.c
+stdlib.h
+-
+geracao_particoes.h
+C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/geracao_particoes.h
+nomes.h
+C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/nomes.h
+cliente.h
+C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/cliente.h
+
+C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/geracao_particoes.h
+nomes.h
+C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/nomes.h
+
+C:/Users/Idylicaro/Documents/Github/EDII---Primeira-Entrega/project/nomes.h
+
