@@ -105,12 +105,13 @@ void selecao_com_substituicao(char *nome_arquivo_entrada, Nomes *nome_arquivos_s
             exit(1);
         }
 
+            printf("\n== P>%s==\n", nome_particao);
         while(fullXFrozenArray(frozen,M) != 1 || !feof(arq)){ //  enquanto não tiver todoo o array congelado ou for o fim do arquivo
             // pega o index do menor codigo dentro da memory
             int minIndex = getMinIndex(M, memory,frozen);
 
             //salva na partição
-            printf("%i:%s",memory[minIndex]->cod_cliente,memory[minIndex]->nome);
+            printf("%i:%s\n",memory[minIndex]->cod_cliente,memory[minIndex]->nome);
             TCliente *minCliente = memory[minIndex];
             salva_cliente(minCliente, p);
 
@@ -142,26 +143,32 @@ void initFronzenArray(char *array, int M){
 }
 
 int fullXFrozenArray(char *array, int m){
-    int isfull = 1;
-    for(int cont = 0 ; cont < m ; cont++){
-        if(array[cont] == 'X') isfull = 0;
+    int countX = 0;
+    for(int i = 0 ; i < m ; i++){
+        if(array[i]=='X') {countX++;}
     }
-    return isfull;
+    return countX == m ? 1:0;
 }
 
 int getMinIndex(int M, TCliente* *memory, char *frozen) {
-    int minValue, minIndex ;
+    int minValue, minIndex , first=0;
 
-    for(int k=0,j=1; k < M-1;){
+    for(int k=0; k < M-1;){
         if (frozen[k] == 'X'){
-            k++;j++;
+            k++;
             continue;
         }
+        if(first==0){
+            minIndex=k;
+            minValue=memory[k]->cod_cliente;
+            first++;
+        }
+
         if(memory[k]->cod_cliente < memory[minIndex]->cod_cliente){
             minIndex = k;
             minValue = memory[k]->cod_cliente;
         }
-        k++;j++;
+        k++;
     }
     return minIndex;
 }
