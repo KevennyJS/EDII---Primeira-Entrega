@@ -2,7 +2,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #endif
 
-#include <stdlib.h>
 #include "geracao_particoes.h"
 #include "nomes.h"
 #include "cliente.h"
@@ -80,65 +79,63 @@ void selecao_com_substituicao(char *nome_arquivo_entrada, Nomes *nome_arquivos_s
     //abre arquivo para leitura
     if ((arq = fopen(nome_arquivo_entrada, "rb")) == NULL) {
         printf("Erro ao abrir arquivo de entrada\n");
-        exit(1);
-    }
+    }else{
+        FILE *p; // arquivo de partições
 
-    FILE *p; // arquivo de partições
+        TCliente *memory[M]; // array em memoria
+        char frozen[M]; // array que representa os congelados
+        initFronzenArray(frozen,M);
 
-    TCliente *memory[M]; // array em memoria
-    char frozen[M]; // array que representa os congelados
-    initFronzenArray(frozen,M);
-
-    // le os M primeiros registros
-    int z = 0;
-    while (!feof(arq) && z < M) {
-        memory[z] = le_cliente(arq);
-        z++;
-    }
-
-    while (feof(arq) == 0) { //enquanto não for o fim do arquivo de entrada e fim do algoritimo
-
-        // abre arquivo de partição
-        char *nome_particao = nome_arquivos_saida->nome; // pega o nome da primeira partição
-        if ((p = fopen(nome_particao, "wb")) == NULL) {
-            printf("Erro criar arquivo de saida\n");
-            exit(1);
+        // le os M primeiros registros
+        int z = 0;
+        while (!feof(arq) && z < M) {
+            memory[z] = le_cliente(arq);
+            z++;
         }
 
-            printf("\n== P>%s==\n", nome_particao);
-        while((fullXFrozenArray(frozen,M) != 1) ){ //  enquanto não tiver todoo o array congelado ou for o fim do arquivo
-            // pega o index do menor codigo dentro da memory
-            int minIndex = getMinIndex(M, memory,frozen);
-
-            //salva na partição
-            printf("%i:%s\n",memory[minIndex]->cod_cliente,memory[minIndex]->nome);
-            TCliente *minCliente = memory[minIndex];  //minCliente fica como ultimo cliente salvo na partição
-            salva_cliente(minCliente, p);
-
-            // pega o proximo R
-            TCliente *minClienteAux = le_cliente(arq);
-            if(minClienteAux != NULL){
-                memory[minIndex] = minClienteAux;
+        while (fim == 0) { //enquanto não for o fim do arquivo de entrada e fim do algoritimo
+            // abre arquivo de partição
+            char *nome_particao = nome_arquivos_saida->nome; // pega o nome da primeira partição
+            if ((p = fopen(nome_particao, "wb")) == NULL) {
+                printf("Erro criar arquivo de saida2\n");
             }else{
-                frozen[minIndex] = 'X';
-            }
+                printf("\n== P>%s==\n", nome_particao);
+                while((fullXFrozenArray(frozen,M) != 1) ){ //  enquanto não tiver todoo o array congelado ou for o fim do arquivo
+                    // pega o index do menor codigo dentro da memory
+                    int minIndex = getMinIndex(M, memory,frozen);
 
-            if (frozen[minIndex] != 'X'){ // aqui serve para não deixar quebra quando  na memory ja tiver clientes com NULL
-                if(memory[minIndex]->cod_cliente < minCliente->cod_cliente){
-                    frozen[minIndex] = 'X';
+                    //salva na partição
+                    printf("%i:%s\n",memory[minIndex]->cod_cliente,memory[minIndex]->nome);
+                    TCliente *minCliente = memory[minIndex];  //minCliente fica como ultimo cliente salvo na partição
+                    salva_cliente(minCliente, p);
+
+                    // pega o proximo R
+                    if(fim == 0){
+                        TCliente *minClienteAux = le_cliente(arq);
+                        if(minClienteAux != NULL){
+                            memory[minIndex] = minClienteAux;
+                        }else{
+                            fim = 1;
+                            frozen[minIndex] = 'X';
+                        }
+                    }else{
+                        frozen[minIndex] = 'X';
+                    }
+
+                    if (frozen[minIndex] != 'X'){ // aqui serve para não deixar quebra quando  na memory ja tiver clientes com NULL
+                        if(memory[minIndex]->cod_cliente < minCliente->cod_cliente){
+                            frozen[minIndex] = 'X';
+                        }
+                    }
                 }
+
+                fclose(p); // fecha partição
+                initFronzenArray(frozen,M);// descongela
+
+                nome_arquivos_saida = nome_arquivos_saida->prox; // pega o proximo nome de partição e coloca como atual
             }
         }
 
-        fclose(p); // fecha partição
-        initFronzenArray(frozen,M);// descongela
-
-//        if (feof(arq)) {
-//            fim = 1;
-//            break;
-//        }
-
-        nome_arquivos_saida = nome_arquivos_saida->prox; // pega o proximo nome de partição e coloca como atual
     }
 
 }
