@@ -157,7 +157,7 @@ int fullXFrozenArray(char *array, int m){
 int getMinIndex(int M, TCliente* *memory, char *frozen) {
     int minValue, minIndex , first=0;
 
-    for(int k=0; k < M-1;){
+    for(int k=0; k < M;){
         if (frozen[k] == 'X'){
             k++;
             continue;
