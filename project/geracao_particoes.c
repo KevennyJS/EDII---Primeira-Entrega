@@ -96,7 +96,7 @@ void selecao_com_substituicao(char *nome_arquivo_entrada, Nomes *nome_arquivos_s
         z++;
     }
 
-    while (fim != 1) { //enquanto não for o fim do arquivo de entrada e fim do algoritimo
+    while (feof(arq) == 0) { //enquanto não for o fim do arquivo de entrada e fim do algoritimo
 
         // abre arquivo de partição
         char *nome_particao = nome_arquivos_saida->nome; // pega o nome da primeira partição
@@ -106,30 +106,37 @@ void selecao_com_substituicao(char *nome_arquivo_entrada, Nomes *nome_arquivos_s
         }
 
             printf("\n== P>%s==\n", nome_particao);
-        while((fullXFrozenArray(frozen,M) != 1) && !feof(arq)){ //  enquanto não tiver todoo o array congelado ou for o fim do arquivo
+        while((fullXFrozenArray(frozen,M) != 1) ){ //  enquanto não tiver todoo o array congelado ou for o fim do arquivo
             // pega o index do menor codigo dentro da memory
             int minIndex = getMinIndex(M, memory,frozen);
 
             //salva na partição
             printf("%i:%s\n",memory[minIndex]->cod_cliente,memory[minIndex]->nome);
-            TCliente *minCliente = memory[minIndex];
+            TCliente *minCliente = memory[minIndex];  //minCliente fica como ultimo cliente salvo na partição
             salva_cliente(minCliente, p);
 
             // pega o proximo R
-            memory[minIndex] = le_cliente(arq);
-
-            if(memory[minIndex]->cod_cliente < minCliente->cod_cliente){
+            TCliente *minClienteAux = le_cliente(arq);
+            if(minClienteAux != NULL){
+                memory[minIndex] = minClienteAux;
+            }else{
                 frozen[minIndex] = 'X';
+            }
+
+            if (frozen[minIndex] != 'X'){ // aqui serve para não deixar quebra quando  na memory ja tiver clientes com NULL
+                if(memory[minIndex]->cod_cliente < minCliente->cod_cliente){
+                    frozen[minIndex] = 'X';
+                }
             }
         }
 
         fclose(p); // fecha partição
         initFronzenArray(frozen,M);// descongela
 
-        if (feof(arq)) {
-            fim = 1;
-            break;
-        }
+//        if (feof(arq)) {
+//            fim = 1;
+//            break;
+//        }
 
         nome_arquivos_saida = nome_arquivos_saida->prox; // pega o proximo nome de partição e coloca como atual
     }
