@@ -99,22 +99,20 @@ void selecao_com_substituicao(char *nome_arquivo_entrada, Nomes *nome_arquivos_s
             if ((p = fopen(nome_particao, "wb")) == NULL) {
                 printf("Erro criar arquivo de saida2\n");
             }else{
-                printf("\n== P>%s==\n", nome_particao);
                 while((fullXFrozenArray(frozen,M) != 1) ){ //  enquanto não tiver todoo o array congelado ou for o fim do arquivo
                     // pega o index do menor codigo dentro da memory
                     int minIndex = getMinIndex(M, memory,frozen);
 
                     //salva na partição
-                    printf("%i:%s\n",memory[minIndex]->cod_cliente,memory[minIndex]->nome);
                     TCliente *minCliente = memory[minIndex];  //minCliente fica como ultimo cliente salvo na partição
                     salva_cliente(minCliente, p);
 
                     // pega o proximo R
-                    if(fim == 0){
+                    if(fim == 0){// verifica se está no final do arquivo de entrada se tiver ele não deixa ficar carregando novos clientes
                         TCliente *minClienteAux = le_cliente(arq);
                         if(minClienteAux != NULL){
                             memory[minIndex] = minClienteAux;
-                        }else{
+                        }else{// quando o cliente carregado for NULL é pq ja esta no final do arquivo entao ele gela a posição
                             fim = 1;
                             frozen[minIndex] = 'X';
                         }
