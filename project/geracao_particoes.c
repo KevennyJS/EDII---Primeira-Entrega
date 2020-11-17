@@ -11,7 +11,6 @@ int getMinIndexWithFrozen(int M, TCliente* *memory, char *frozen);
 int getMinIndex(int M, TCliente* *memory);
 void initFronzenArray(char *array, int M);
 int fullXFrozenArray(char *array, int m);
-int verifyFullReservatorio(FILE *reservatorio, int m);
 
 void classificacao_interna(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int M) {
 
@@ -155,7 +154,7 @@ int fullXFrozenArray(char *array, int m){
 }
 
 int getMinIndexWithFrozen(int M, TCliente* *memory, char *frozen) {
-    int minValue, minIndex , first=0;
+    int minIndex , first=0;
 
     for(int k=0; k < M;){
         if (frozen[k] == 'X'){
@@ -164,13 +163,11 @@ int getMinIndexWithFrozen(int M, TCliente* *memory, char *frozen) {
         }
         if(first==0){
             minIndex=k;
-            minValue=memory[k]->cod_cliente;
             first++;
         }
 
         if(memory[k]->cod_cliente < memory[minIndex]->cod_cliente){
             minIndex = k;
-            minValue = memory[k]->cod_cliente;
         }
         k++;
     }
@@ -179,7 +176,7 @@ int getMinIndexWithFrozen(int M, TCliente* *memory, char *frozen) {
 
 void selecao_natural(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int M, int n) {
 
-    int fim = 0; //variável de controle para saber se arquivo de entrada terminou
+    int fim = 0,indexReservatorio=0; //variável de controle para saber se arquivo de entrada terminou
     FILE *arq; //declara ponteiro para arquivo de entrada
     FILE *reservatorio; //declara ponteiro para arquivo do reservatorio
 
@@ -206,7 +203,7 @@ void selecao_natural(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int
             if ((p = fopen(nome_particao, "wb")) == NULL) {
                 printf("Erro criar arquivo de saida2\n");
             }else{
-                while((verifyFullReservatorio(reservatorio,M) != 1) && (fim == 0)){ //  enquanto não tiver todoo o array congelado ou for o fim do arquivo
+                while((indexReservatorio < M) && (fim == 0)){ //  enquanto não tiver todoo o array congelado ou for o fim do arquivo
                     // pega o index do menor codigo dentro da memory
                     int minIndex = getMinIndex(M, memory);
 
@@ -222,6 +219,7 @@ void selecao_natural(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int
                         if(minClienteNewR!=NULL){
                             if (minClienteNewR->cod_cliente < minCliente->cod_cliente){
                                 salva_cliente(minClienteNewR,reservatorio);
+                                indexReservatorio++; // indica quantos elementos tem no reservatorio
                             }else{
                                 memory[minIndex] = minClienteNewR;
                             }
@@ -234,7 +232,7 @@ void selecao_natural(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int
 
                 }
 
-                //todo: esvaziar memoria (colocar a memoria na partição)
+                //todo: esvaziar memoria (colocar a memoria na partição) precisa ser colocado em ordem ex:[NULL,50,NULL,81,78,NULL] e ignorar os null
                 //todo: por os registros do reservatorio na memoria
                 fclose(p); // fecha partição
                 nome_arquivos_saida = nome_arquivos_saida->prox; // pega o proximo nome de partição e coloca como atual
@@ -244,18 +242,24 @@ void selecao_natural(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int
     }
 
 }
-int verifyFullReservatorio(FILE *reservatorio, int m) {
-    //todo: cria um while que fica puxando cliente e cria uma variavel para ficar contando, se puxar null e i != M retorna falso
 
-    return 0;
-}
 int getMinIndex(int M, TCliente* *memory){
-    int minIndex=0;
+    int minIndex , first=0;
 
-    for(int k=0; k < M;k++){
+    for(int k=0; k < M;){
+        if (memory[k] == NULL){
+            k++;
+            continue;
+        }
+        if(first==0){
+            minIndex=k;
+            first++;
+        }
+
         if(memory[k]->cod_cliente < memory[minIndex]->cod_cliente){
             minIndex = k;
         }
+        k++;
     }
     return minIndex;
 }
