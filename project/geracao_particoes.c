@@ -5,13 +5,15 @@
 #include "geracao_particoes.h"
 #include "nomes.h"
 #include "cliente.h"
+#include "string.h"
 
 
 int getMinIndexWithFrozen(int M, TCliente* *memory, char *frozen);
 int getMinIndex(int M, TCliente* *memory);
 void initFronzenArray(char *array, int M);
 int fullXFrozenArray(char *array, int m);
-
+int estaVazio(TCliente **vetor, int n);
+int reservatorioTransferToMemory(FILE *reservatorio,TCliente **memory,int indexReservatorio, int M);
 void classificacao_interna(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int M) {
 
     int fim = 0; //variável de controle para saber se arquivo de entrada terminou
@@ -176,13 +178,13 @@ int getMinIndexWithFrozen(int M, TCliente* *memory, char *frozen) {
 
 void selecao_natural(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int M, int n) {
 
-    int fim = 0,indexReservatorio=0; //variável de controle para saber se arquivo de entrada terminou
+    int fim = 0,fimBuscaR=0,indexReservatorio=0; //variável de controle para saber se arquivo de entrada terminou //fim buscaR é a variavel que determina que os proximos R serao NULOS
     FILE *arq; //declara ponteiro para arquivo de entrada
     FILE *reservatorio; //declara ponteiro para arquivo do reservatorio
 
     //abre arquivo para leitura
     arq = fopen(nome_arquivo_entrada, "rb");
-    reservatorio = fopen(nome_arquivo_entrada, "rb");
+    reservatorio = fopen("reservatorio.dat", "wb+");
     if ( (arq == NULL) || (reservatorio == NULL)) {
         printf("Erro ao abrir arquivo de entrada ou criar arquivo do reservatorio\n");
     }else{
@@ -197,43 +199,60 @@ void selecao_natural(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int
             z++;
         }
 
-        while (fim == 0) { //enquanto não for o fim do arquivo de entrada e fim do algoritimo
+        while (fimBuscaR < 2) { //enquanto não for o fim do arquivo de entrada e fim do algoritimo
+            if(fimBuscaR == 1){
+                fimBuscaR++;
+            }
             // abre arquivo de partição
             char *nome_particao = nome_arquivos_saida->nome; // pega o nome da primeira partição
             if ((p = fopen(nome_particao, "wb")) == NULL) {
                 printf("Erro criar arquivo de saida2\n");
             }else{
-                while((indexReservatorio < M) && (fim == 0)){ //  enquanto não tiver todoo o array congelado ou for o fim do arquivo
+                //printf("\n== P>%s==\n", nome_particao);
+                int fimParticao=0;
+                while((indexReservatorio < n) && (fimParticao == 0)){ //  enquanto não tiver todoo o array congelado ou for o fim do arquivo
+                    if(estaVazio(memory,M) == 1){
+                        fimParticao = 1;
+                        break;
+                    }
                     // pega o index do menor codigo dentro da memory
                     int minIndex = getMinIndex(M, memory);
 
                     //salva na partição
+                    //printf("%i:%s\n",memory[minIndex]->cod_cliente,memory[minIndex]->nome);
+                    //printf("\n>>>>>%i::%i", minIndex, countVerifyNullMemory);
                     TCliente *minCliente = memory[minIndex];  //minCliente fica como ultimo cliente salvo na partição
                     salva_cliente(minCliente, p);
 
+                    if(fimBuscaR != 0){
+                        memory[minIndex] = NULL;
+                    }
 
                     // pega o proximo R
-                    TCliente *minClienteNewR;
-                    do {
-                        minClienteNewR= le_cliente(arq);
-                        if(minClienteNewR!=NULL){
-                            if (minClienteNewR->cod_cliente < minCliente->cod_cliente){
-                                salva_cliente(minClienteNewR,reservatorio);
-                                indexReservatorio++; // indica quantos elementos tem no reservatorio
-                            }else{
-                                memory[minIndex] = minClienteNewR;
+                    if(fimBuscaR==0){
+                        TCliente *minClienteNewR;
+                        do {
+                            minClienteNewR = le_cliente(arq);
+                            if (minClienteNewR != NULL) {
+                                if (minClienteNewR->cod_cliente < minCliente->cod_cliente) {
+                                    salva_cliente(minClienteNewR, reservatorio);
+                                    indexReservatorio++; // indica quantos elementos tem no reservatorio
+                                } else {
+                                    memory[minIndex] = minClienteNewR;
+                                }
+                            }else {
+                                fimBuscaR = 1;
+                                memory[minIndex] = NULL;
+                                break;
                             }
-                        }else{
-                            fim = 1;
-                            break;
-                        }
-                    }while (minClienteNewR->cod_cliente < minCliente->cod_cliente);
-
+                        } while (minClienteNewR->cod_cliente < minCliente->cod_cliente);
+                    }
 
                 }
 
-                //todo: esvaziar memoria (colocar a memoria na partição) precisa ser colocado em ordem ex:[NULL,50,NULL,81,78,NULL] e ignorar os null
+                //organizarArray(memory,M,NULL);
                 //todo: por os registros do reservatorio na memoria
+                indexReservatorio = reservatorioTransferToMemory(reservatorio,memory,indexReservatorio,M);
                 fclose(p); // fecha partição
                 nome_arquivos_saida = nome_arquivos_saida->prox; // pega o proximo nome de partição e coloca como atual
             }
@@ -241,6 +260,25 @@ void selecao_natural(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int
 
     }
 
+}
+int estaVazio(TCliente **vetor, int n) {
+    for (int i = 0; i < n; i++) {
+        if(vetor[i] != NULL) return 0;
+    }
+    return 1;
+}
+
+int reservatorioTransferToMemory(FILE *reservatorio,TCliente **memory,int indexReservatorio, int M){
+    rewind(reservatorio);
+    TCliente *aux = NULL;
+    int i = 0;
+    while ((aux = le_cliente(reservatorio)) != NULL && i<M){
+        memory[i] = aux;
+        indexReservatorio--;
+        i++;
+    }
+    rewind(reservatorio);
+    return indexReservatorio;
 }
 
 int getMinIndex(int M, TCliente* *memory){

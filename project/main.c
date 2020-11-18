@@ -214,12 +214,14 @@ void teste06(){
     selecao_natural(NOME_ARQUIVO_ENTRADA, nomes, 6,6);
 
     p = nomes;
+    printf("\n=========== P1 \n");
     saida = le_clientes(p->nome);
     imprime_clientes(saida); //imprime a partição p1
 
     libera_clientes(saida);
     p = p->prox;
 
+    printf("\n=========== P2 \n");
     saida = le_clientes(p->nome);
     imprime_clientes(saida); //imprime a partição p2
 
