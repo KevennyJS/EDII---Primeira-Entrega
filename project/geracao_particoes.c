@@ -199,7 +199,7 @@ void selecao_natural(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int
             z++;
         }
 
-        while (isEmptyEntrada == 0 && estaVazio(memory,M) == 1) { //enquanto não for o fim do arquivo de entrada e fim do algoritimo
+        while (isEmptyEntrada == 0 && estaVazio(memory,M) == 0) { //enquanto não for o fim do arquivo de entrada e fim do algoritimo
             // abre arquivo de partição
             char *nome_particao = nome_arquivos_saida->nome; // pega o nome da primeira partição
             if ((p = fopen(nome_particao, "wb")) == NULL) {
@@ -228,7 +228,7 @@ void selecao_natural(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int
                     salva_cliente(minCliente, p);
 
 
-                        memory[minIndex] = NULL;
+                    memory[minIndex] = NULL;
 
 
                     // pega o proximo R
