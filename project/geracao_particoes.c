@@ -208,7 +208,7 @@ void selecao_natural(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int
                 //printf("\n== P>%s==\n", nome_particao);
                 fimParticao = 0;
                 while(fimParticao == 0){ //  enquanto não tiver todoo o array MULL ou for o fim do arquivo
-                    if(estaVazio(memory,M) == 1 || indexReservatorio > 5 || isEmptyEntrada != 0){
+                    if(estaVazio(memory,M) == 1 || indexReservatorio > 5 || isEmptyEntrada!= 0 ){
                         fimParticao = 1;
                     }
                     if(fimParticao == 1){ // esvazia memoria
@@ -259,6 +259,14 @@ void selecao_natural(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int
                 fclose(p); // fecha partição
                 nome_arquivos_saida = nome_arquivos_saida->prox; // pega o proximo nome de partição e coloca como atual
             }
+            if(isEmptyEntrada != 0){
+                while (estaVazio(memory,M) != 1){
+                    int minIndex = getMinIndex(M, memory);
+                    salva_cliente(memory[minIndex], p);
+                    memory[minIndex] = NULL;
+                }
+            }
+            fclose(p);
         }
 
     }
