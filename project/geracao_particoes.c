@@ -184,9 +184,8 @@ void selecao_natural(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int
 
     //abre arquivo para leitura
     arq = fopen(nome_arquivo_entrada, "rb");
-    reservatorio = fopen("reservatorio.dat", "wb+");
-    if ( (arq == NULL) || (reservatorio == NULL)) {
-        printf("Erro ao abrir arquivo de entrada ou criar arquivo do reservatorio\n");
+    if (arq == NULL) {
+        printf("Erro ao abrir arquivo de entrada\n");
     }else{
         FILE *p; // arquivo de partições
 
@@ -199,7 +198,8 @@ void selecao_natural(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int
             z++;
         }
 
-        while (isEmptyEntrada == 0 && estaVazio(memory,M) == 0) { //enquanto não for o fim do arquivo de entrada e fim do algoritimo
+        while ((isEmptyEntrada == 0 && estaVazio(memory,M) == 0)) { //enquanto não for o fim do arquivo de entrada e fim do algoritimo
+            reservatorio = fopen("reservatorio.dat", "wb+");
             // abre arquivo de partição
             char *nome_particao = nome_arquivos_saida->nome; // pega o nome da primeira partição
             if ((p = fopen(nome_particao, "wb")) == NULL) {
@@ -254,23 +254,28 @@ void selecao_natural(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int
                             } while (minClienteNewR->cod_cliente < minCliente->cod_cliente);
                         }
                 }
-
                 indexReservatorio = reservatorioTransferToMemory(reservatorio,memory,indexReservatorio,M);
+                fclose(reservatorio);
                 fclose(p); // fecha partição
                 nome_arquivos_saida = nome_arquivos_saida->prox; // pega o proximo nome de partição e coloca como atual
             }
-            if(isEmptyEntrada != 0){
+        }
+        if((isEmptyEntrada != 0) && (estaVazio(memory,M) == 0)){
+            char *nome_particao = nome_arquivos_saida->nome;
+            if ((p = fopen(nome_particao, "wb")) == NULL) {
+                printf("Erro criar arquivo de saida2\n");
+            }else{
                 while (estaVazio(memory,M) != 1){
                     int minIndex = getMinIndex(M, memory);
                     salva_cliente(memory[minIndex], p);
                     memory[minIndex] = NULL;
                 }
+                fclose(p);
             }
-            fclose(p);
         }
-
     }
-    fclose(reservatorio);
+
+
     fclose(arq);
 }
 int estaVazio(TCliente **vetor, int n) {
@@ -289,7 +294,7 @@ int reservatorioTransferToMemory(FILE *reservatorio,TCliente **memory,int indexR
         indexReservatorio--;
         i++;
     }
-    rewind(reservatorio);
+    //rewind(reservatorio);
     return indexReservatorio;
 }
 

@@ -10,7 +10,7 @@
 Nomes *nomes = NULL;
 
 ListaClientes *entrada, *oraculo, *saida;
-//Nomes *p;
+Nomes *p;
 
 void teste01(){
     //Classificacao Interna. Arquivo com 2 registros ja ordenados.
@@ -352,35 +352,35 @@ int main(void) {
     printf("=======================\n");
     printf("Execução do teste 01 \n");
     printf("=======================\n");
-    teste01();
+    //teste01();
     printf("\n");
 
     //Classificacao Interna. Arquivo com 2 registros desordenados.
     printf("=======================\n");
     printf("Execução do teste 02 \n");
     printf("=======================\n");
-    teste02();
+    //teste02();
     printf("\n");
 
     //Classificacao Interna. Arquivo com 6 registros desordenados.
     printf("=======================\n");
     printf("Execução do teste 03 \n");
     printf("=======================\n");
-    teste03();
+    //teste03();
     printf("\n");
 
     //Classificacao Interna. Arquivo com 9 registros desordenados.
     printf("=======================\n");
     printf("Execução do teste 04 \n");
     printf("=======================\n");
-    teste04();
+    //teste04();
     printf("\n");
 
     //Por substituição. Arquivo com 20 registros desordenados.
     printf("=======================\n");
     printf("Execução do teste 05 \n");
     printf("=======================\n");
-    teste05();
+    //teste05();
     printf("\n");
 
     //Seleção Natural. Arquivo com 20 registros desordenados.
