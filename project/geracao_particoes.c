@@ -138,7 +138,7 @@ void selecao_com_substituicao(char *nome_arquivo_entrada, Nomes *nome_arquivos_s
         }
 
     }
-
+ fclose(arq);
 }
 
 void initFronzenArray(char *array, int M){
@@ -263,6 +263,7 @@ void selecao_natural(char *nome_arquivo_entrada, Nomes *nome_arquivos_saida, int
 
     }
     fclose(reservatorio);
+    fclose(arq);
 }
 int estaVazio(TCliente **vetor, int n) {
     for (int i = 0; i < n; i++) {
